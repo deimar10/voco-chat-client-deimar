@@ -1,4 +1,3 @@
-
 function Chat() {
     return (
 <div class="box">
@@ -17,10 +16,11 @@ function Chat() {
     <div class="min-box">
 <li class="listing">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 <p> John Smith * 12.01.2022 15:32</p></li>
-<li class="listing">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
-<li  class="listing">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
-<li  class="listing"> class="box"Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
-<li  class="listing">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </li>
+<li class="listing">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+<p> John Smith * 12.01.2022 15:32</p></li>
+<li  class="listing">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+<p> John Smith * 12.01.2022 15:32</p></li>
+
     </div>
   </ul>
 </div>
