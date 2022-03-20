@@ -3,57 +3,61 @@ import {useState} from "react";
 
         function App ()  {
         const [author, setAuthor] = useState('');
-        const [submittedText, setSubmittedText] = useState(null);
-        const [message, setMessage] = useState('');
-        const [submittedText2, setSubmittedText2] = useState(null);
-        const textChangeHandler = (i) => {
-            setAuthor(i.target.value);
-            //console.log(i.target.value);
+            const [text, setText] = useState('');
+            const [messages, setMessages] = useState([]);
 
-        };
 
-        const textChangeHandler2 = (i) => {
-            setMessage(i.target.value);
-            //console.log(i.target.value);
 
-        };
-
-        const submitHandler = (event) => {
-            event.preventDefault();
-            setSubmittedText(author);
-            setAuthor("");
-
-            setSubmittedText2(message);
-            setMessage("");
+            const submitHandler = (event) => {
+                event.preventDefault();
+               setAuthor('')
+                setMessages ('');
         };
 
         return (
             <div className="App">
-                <h1 class="title">MYCHAT</h1>
-                <form onSubmit={submitHandler}>
-                    <input class="user"
-                        placeholder="Username"
-                        type="text"
-                        value={author}
-                        onChange={textChangeHandler}
-                    />
 
-                    <input class="message"
-                        placeholder="Message"
-                        type="text"
-                        value={message}
-                        onChange={textChangeHandler2}
-                    />
+                <div className="head">
 
-                    <button class="btn" type="submit" >
-                        Submit
-                    </button>
-                </form>
-                <div class="text">
-                {submittedText && (<p  id="text-author"> User Name:&nbsp;&nbsp;{submittedText}</p>)}
-                {submittedText2 && (<p id="text-message">{submittedText2}</p>)}
+                    <div className="text2">
+                    <div className="text">
+                        <p id="text-message"> {messages} </p>
+                        <p id="text-author"> {author} </p>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="body">
+
+                    <form>
+
+                        <div className="chatbox">
+
+                            <input className="user"
+                                   placeholder="Username"
+                                   type="text"
+
+                            />
+
+                           <input className="message"
+                                   placeholder="Message"
+                                   type="text"
+
+                            />
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <button onClick={submitHandler} className="btn" type="submit">
+                    Submit
+                </button>
+
             </div>
-            </div>
+
         );
     }
 export default App;

@@ -1,14 +1,11 @@
 .App {
   font-family: sans-serif;
-  background-color: #282c34;
-  border: 1px solid #282c34;
-  border-radius: 20px;
   margin: auto;
-  width: 600px;
   padding: 25px;
   margin-top: 50px;
   color: lightgrey;
   font-weight: bolder;
+  width: 807px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -19,25 +16,35 @@
   }
 }
 
-
-.title {
-  text-decoration: 4px tomato underline;
-  text-underline-offset: 7px;
+.head {
+  background-color: #282c34;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 0px 0px;
+  font-size: 30px;
   text-align: center;
-  letter-spacing: 10px;
-  font-weight: bold;
-  color: lightgrey;
+  height: 300px;
 }
 
+
+
+.body {
+  align-content: start;
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+
 .user {
-  margin-top:25px;
-  width: 390px;
+  width: 200px;
   height: 50px;
-  margin-left: 15%;
-  background-color: #282c34;
-  color: white;
-  border: 3px solid tomato;
-  border-radius:10px;
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  border-radius: 0px 0px 0px 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -48,15 +55,16 @@
   }
 }
 
+
 .message {
-  margin-top:20px;
-  width: 390px;
+  margin-bottom: 0.5px;
+  width: 564px;
   height: 50px;
-  margin-left: 15%;
-  background-color: #282c34;
-  color: white;
-  border: 3px solid tomato;
-  border-radius:10px;
+  margin-left: -1%;
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  border-radius: 0px 0px 20px 0px;
 }
 
 
@@ -69,38 +77,56 @@
 }
 
 .text {
-  margin-top:25px;
+  text-align: left;
+  padding-top: 5px;
+  margin-left: 8%;
+  width: 85%;
+  font-size: 25px;
+  margin-top:35px;
+  background: #5d5d5d;
+  color: white;
+  border-radius: 20px;
+}
+
+
+.text2 {
+  padding-top: 5px;
+  margin-left: 8%;
+  width: 85%;
+  font-size: 20px;
+  margin-top:35px;
   background-color: #282c34;
   color: white;
 }
+
 
 #text-author {
   margin-top:50px;
   padding: 10px;
   width: 100%;
-  background: #1a1d21;
-  text-align: center;
+  background: #5d5d5d;
   border-radius: 20px;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 #text-message {
   padding: 30px;
   margin-top:20px;
   width: 100%;
-  background: #1a1d21;
-  text-align: center;
+  background: #5d5d5d;
   border-radius: 20px;
 }
 
 
 .btn {
-  background-color: tomato;
+  background-color: rgba(255, 99, 71, 0);
   width: 120px;
   height: 40px;
-  border: 1px solid tomato;
+  border: 3px solid #ffffff;
   border-radius: 9px;
-  color: #282c34;
+  color: white;
   font-weight: bold;
-  margin-left: 40%;
   margin-top: 15px;
+  float: right;
 }
