@@ -78,11 +78,10 @@
 
 .text {
   text-align: left;
-  padding-top: 5px;
+  padding-top: 1px;
   margin-left: 8%;
   width: 85%;
   font-size: 25px;
-  margin-top:35px;
   background: #5d5d5d;
   color: white;
   border-radius: 20px;
@@ -90,7 +89,7 @@
 
 
 .text2 {
-  padding-top: 5px;
+  padding-top: 25px;
   margin-left: 8%;
   width: 85%;
   font-size: 20px;
@@ -105,7 +104,7 @@
   padding: 10px;
   width: 100%;
   background: #5d5d5d;
-  border-radius: 20px;
+  border-radius: 0px 0px 0px 20px;
   font-weight: normal;
   font-size: 16px;
 }
