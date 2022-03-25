@@ -1,152 +1,51 @@
-/* import {useState, useEffect} from "react";
-
-
-      function App ()  {
-          const [author, setAuthor] = useState('');
-          const [submittedText, setSubmittedText] = useState(null);
-          const [messages, setMessages] = useState([]);
-          const [submittedText2, setSubmittedText2] = useState(null);
-
-          useEffect(() => {
-
-          });
-
-          const textChangeHandler = (i) => {
-              setAuthor(i.target.value)
-              //console.log(i.target.value);
-
-          };
-
-          const textChangeHandler2 = (i) => {
-              setMessages(i.target.value);
-              //console.log(i.target.value);
-
-          };
-
-          const submitHandler = (event) => {
-              event.preventDefault();
-              setSubmittedText(author);
-              setAuthor("");
-
-              setSubmittedText2(messages);
-              setMessages("");
-
-          };
-
-      return (
-          <div className="App">
-
-              <div className="head">
-
-
-                  <div className="text">
-                      {submittedText && (<p  id="text-author"> User Name:&nbsp;&nbsp;{submittedText}</p>)}
-                      {submittedText2 && (<p id="text-message">{submittedText2}</p>)}
-                  </div>
-              </div>
-
-
-              <div class="body">
-
-                  <form onSubmit={submitHandler}>
-
-                      <div className="chatbox">
-
-                          <input className="user"
-                                 placeholder="Username"
-                                 type="text"
-                                 value={author}
-                                 onChange={textChangeHandler}
-
-
-                          />
-
-                         <input className="message"
-                                 placeholder="Message"
-                                 type="text"
-                                value={messages}
-                                onChange={textChangeHandler2}
-
-                          />
-                      </div>
-
-                  </form>
-
-              </div>
-
-
-              <button onClick={submitHandler} className="btn" type="submit">
-                  Submit
-              </button>
-
-          </div>
-
-      );
-  }
-export default App;
-*/
-
 import {useState} from "react";
 
+function App () {
+    const [name, setName] = useState('');
+    const  [chats, setChats] = useState([]);
+    const [msg, setMsg] = useState('');
 
-function App ()  {
-    const [author, setAuthor] = useState('');
-    const [text, setText] = useState('');
-    const [messages, setMessages] = useState([]);
 
+    const sendChat = ()=>{
+        const c = [...chats];
+        c.push({name, message:msg});
+        setChats(c);
+        setMsg('')
+    }
 
-    const submitHandler = (event) => {
-        event.preventDefault();
-        setMessages([...messages, { author, text }]);
-        setText('');
-        setAuthor('');
-    };
+return (
+    <div className="app">
+        <div className="box-head">
+            <h1>{name}</h1>
+            <div className="chat-container">
+                {chats.map((c) => (
+                    <div className={`container ${c.name===name ? 'me':''}`}>
+                        <p className="chatbox">
+                            <strong> {c.name}: </strong>
+                            <span>{c.message}</span>
+                        </p>
+                    </div>
+                ))}
+            </div>
 
-    return (
+            <div  className="btm">
 
-    <div className="App">
+                <input className="author"
+                       type="text"
+                       placeholder="Enter your name"
+                       onBlur={event => setName(event.target.value)}
+                />
 
-        <div className="head">
-            <div className="text">
-
-                <p  id="text-author"> User Name:{author}</p>
-                 <p id="text-message">{text}</p>
+                <input
+                    className="message"
+                    onInput={e=>setMsg(e.target.value)}
+                    value={msg}
+                    type="text"
+                    placeholder="message"/>
             </div>
         </div>
-
-
-        <div class="body">
-
-            <form onSubmit={submitHandler}>
-
-                <div>
-
-                    <input className="user"
-                           placeholder="Username"
-                           type="text"
-                           onChange={e => setAuthor (e.target.value)}
-
-
-                    />
-
-                    <input className="message"
-                           placeholder="Message"
-                           type="text"
-                           onChange={e => setText (e.target.value)}
-
-                    />
-                </div>
-
-            </form>
-
+        <button className="btn" onClick={e=>sendChat()}>send</button>
         </div>
-
-
-        <button onClick={submitHandler} className="btn" type="submit">
-            Submit
-        </button>
-
-    </div>
 
 );
 }
